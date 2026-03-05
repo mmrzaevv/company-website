@@ -76,3 +76,14 @@ text-align:center;
 padding:25px;
 margin-top:40px;
 }
+
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
+font-weight:bold;
+}
+
+.logo-img{
+height:40px;
+}

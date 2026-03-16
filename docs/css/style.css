@@ -54,11 +54,6 @@ ul { list-style: none; }
     transform: translateY(-2px);
 }
 
-.btn-blue:hover {
-    background-color: var(--dark-blue);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(11, 61, 145, 0.3);
-}
 
 .btn-right-wrapper {
     display: flex;
@@ -74,7 +69,13 @@ ul { list-style: none; }
     border-radius: 5px; 
     font-weight: 600;
     display: inline-block;
-    transition: var(--transition);
+    transition: var(--transition); /* Плавность */
+}
+
+.btn-blue:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(11, 61, 145, 0.4);
 }
 
 .btn-outline {
@@ -216,13 +217,14 @@ ul { list-style: none; }
     padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
     text-align: center;
+    transition: var(--transition); /* ИМЕННО ЭТО УБИРАЕТ "КАРТОННОСТЬ" */
 }
 
 .service-card:hover {
     transform: translateY(-10px);
     border-bottom: 4px solid var(--primary-red);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1); /* Добавляем мягкую тень при подъеме */
 }
-
 /* =========================================
    SITE FOOTER (Priority1 Style)
 ========================================= */

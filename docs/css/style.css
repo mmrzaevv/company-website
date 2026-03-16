@@ -38,21 +38,20 @@ ul { list-style: none; }
 /* =========================================
    КНОПКИ (BUTTONS)
 ========================================= */
-.btn {
-    display: inline-block;
-    padding: 14px 32px;
-    font-weight: 600;
+.btn-red {
+    background: #d7262e;
+    color: white !important;
+    padding: 12px 25px;
     border-radius: 4px;
-    cursor: pointer;
-    text-align: center;
-    border: 2px solid transparent;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-block; /* Это важно, чтобы padding работал корректно */
+    transition: 0.3s;
 }
 
-.btn-red { background-color: var(--primary-red); color: var(--white); }
 .btn-red:hover {
-    background-color: var(--dark-red);
+    background: #b51e24;
     transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(215, 38, 46, 0.3);
 }
 
 .btn-blue { background-color: var(--primary-blue); color: var(--white); }

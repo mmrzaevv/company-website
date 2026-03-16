@@ -2,10 +2,10 @@
    БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
 ========================================= */
 :root {
-    --primary-blue: #0b3d91; /* Темно-синий из лого */
-    --primary-red: #d7262e;  /* Красный из лого */
-    --dark-blue: #082a66;    /* Еще более темный для ховера */
-    --dark-red: #b51e24;     /* Темно-красный для ховера */
+    --primary-blue: #0b3d91; 
+    --primary-red: #d7262e;  
+    --dark-blue: #082a66;    
+    --dark-red: #b51e24;     
     --text-dark: #333333;
     --text-gray: #666666;
     --bg-light: #f5f7fb;
@@ -32,9 +32,6 @@ body {
     padding: 0 20px;
 }
 
-.text-center { text-align: center; }
-.section-padding { padding: 90px 0; }
-
 a { text-decoration: none; transition: var(--transition); }
 ul { list-style: none; }
 
@@ -51,22 +48,14 @@ ul { list-style: none; }
     border: 2px solid transparent;
 }
 
-.btn-red {
-    background-color: var(--primary-red);
-    color: var(--white);
-}
-
+.btn-red { background-color: var(--primary-red); color: var(--white); }
 .btn-red:hover {
     background-color: var(--dark-red);
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(215, 38, 46, 0.3);
 }
 
-.btn-blue {
-    background-color: var(--primary-blue);
-    color: var(--white);
-}
-
+.btn-blue { background-color: var(--primary-blue); color: var(--white); }
 .btn-blue:hover {
     background-color: var(--dark-blue);
     transform: translateY(-2px);
@@ -88,10 +77,11 @@ ul { list-style: none; }
    TOP BAR (Верхняя полоса)
 ========================================= */
 .top-bar {
-    background-color: #222;
+    background-color: #1a1a1a;
     color: #ccc;
     font-size: 13px;
-    padding: 8px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
 }
 
 .top-bar-container {
@@ -100,18 +90,43 @@ ul { list-style: none; }
     align-items: center;
 }
 
-.top-bar-right a {
-    color: #ccc;
-    margin-left: 20px;
+.top-bar-left-group {
+    display: flex;
+    align-items: center;
+    gap: 25px;
 }
 
-.top-bar-right a:hover {
-    color: var(--primary-red);
+.top-bar-left-group span, 
+.top-bar-left-group a {
+    color: #ffffff !important; /* Тот самый белый цвет */
+    display: flex;
+    align-items: center;
 }
 
-.top-bar i {
-    margin-right: 5px;
+.top-bar-left-group a:hover {
+    color: var(--primary-red) !important;
+}
+
+.top-bar-left-group i {
     color: var(--primary-red);
+    margin-right: 8px;
+}
+
+.social-top {
+    display: flex;
+    gap: 15px;
+    padding-left: 20px;
+    border-left: 1px solid #444;
+}
+
+.social-top a {
+    color: var(--primary-red);
+    font-size: 16px;
+}
+
+.social-top a:hover {
+    color: var(--white);
+    transform: translateY(-2px);
 }
 
 /* =========================================
@@ -132,17 +147,13 @@ ul { list-style: none; }
     padding: 15px 20px;
 }
 
-.logo img {
-    height: 65px;
-    display: block;
-}
+.logo img { height: 65px; display: block; }
 
 .main-nav a {
     margin: 0 18px;
     color: var(--primary-blue);
     font-weight: 600;
     font-size: 15px;
-    position: relative;
 }
 
 .main-nav a:hover, .main-nav a.active {
@@ -153,12 +164,10 @@ ul { list-style: none; }
    HERO SECTION
 ========================================= */
 .hero {
-    /* Добавь свое фото грузовика в папку images и назови truck-bg.jpg */
     background: linear-gradient(rgba(11,61,145,0.85), rgba(8,42,102,0.9)), url("../images/truck.jpg");
     background-size: cover;
     background-position: center;
     padding: 160px 20px;
-    text-align: left; /* Сделали по левому краю как у серьезных брендов */
     color: var(--white);
 }
 
@@ -169,10 +178,6 @@ ul { list-style: none; }
     font-weight: 800;
 }
 
-.hero h1 span {
-    color: var(--primary-red);
-}
-
 .hero p {
     font-size: 20px;
     max-width: 600px;
@@ -180,43 +185,14 @@ ul { list-style: none; }
     opacity: 0.9;
 }
 
-.hero-buttons .btn {
-    margin-right: 15px;
-}
-
 /* =========================================
-   SECTION HEADINGS
-========================================= */
-.subtitle {
-    color: var(--primary-red);
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-    display: block;
-    margin-bottom: 10px;
-}
-
-.section-heading h2 {
-    font-size: 36px;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-}
-
-.heading-line {
-    width: 60px;
-    height: 3px;
-    background-color: var(--primary-red);
-    margin: 0 auto 40px auto;
-}
-
-/* =========================================
-   SERVICES GRID (Как в Priority1)
+   SERVICES GRID
 ========================================= */
 .service-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 30px;
+    padding: 60px 0;
 }
 
 .service-card {
@@ -224,250 +200,16 @@ ul { list-style: none; }
     border-radius: 8px;
     padding: 40px 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.06);
-    transition: var(--transition);
-    border-bottom: 4px solid transparent;
+    text-align: center;
 }
 
 .service-card:hover {
     transform: translateY(-10px);
     border-bottom: 4px solid var(--primary-red);
-    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-.card-icon {
-    font-size: 45px;
-    color: var(--primary-blue);
-    margin-bottom: 25px;
-}
-
-.service-card h3 {
-    font-size: 22px;
-    color: var(--primary-blue);
-    margin-bottom: 15px;
-}
-
-.service-card p {
-    color: var(--text-gray);
-    margin-bottom: 25px;
-    font-size: 15px;
-}
-
-.card-link {
-    color: var(--primary-red);
-    font-weight: 600;
-}
-
-.card-link i {
-    margin-left: 5px;
-    transition: var(--transition);
-}
-
-.service-card:hover .card-link i {
-    transform: translateX(5px);
 }
 
 /* =========================================
-   DRIVERS SECTION
-========================================= */
-.drivers {
-    background-color: var(--white);
-}
-
-.driver-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-}
-
-.driver-image {
-    background: url('../images/truck.jpg') center/cover;
-    height: 500px;
-    border-radius: 10px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-}
-
-.driver-info h2 {
-    font-size: 36px;
-    color: var(--primary-blue);
-    margin-bottom: 20px;
-}
-
-.driver-info p {
-    color: var(--text-gray);
-    margin-bottom: 30px;
-    font-size: 16px;
-}
-
-.driver-benefits {
-    margin-bottom: 30px;
-}
-
-.driver-benefits li {
-    margin-bottom: 12px;
-    font-weight: 600;
-    color: var(--primary-blue);
-}
-
-.driver-benefits i {
-    color: var(--primary-red);
-    margin-right: 10px;
-}
-
-/* =========================================
-   FOOTER
-========================================= */
-.footer {
-    background-color: var(--primary-blue);
-    color: var(--white);
-    padding-top: 70px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 50px;
-    margin-bottom: 50px;
-}
-
-.footer-logo {
-    height: 60px;
-    margin-bottom: 20px;
-    background: white; /* Чтобы темное лого было видно на синем фоне */
-    padding: 5px;
-    border-radius: 5px;
-}
-
-.footer-about p {
-    color: #aebce0;
-    font-size: 14px;
-}
-
-.footer h3 {
-    font-size: 18px;
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.footer h3::after {
-    content: '';
-    position: absolute;
-    left: 0;
-    bottom: -8px;
-    width: 30px;
-    height: 2px;
-    background-color: var(--primary-red);
-}
-
-.footer-links-col a {
-    display: block;
-    color: #aebce0;
-    margin-bottom: 12px;
-    font-size: 15px;
-}
-
-.footer-links-col a:hover {
-    color: var(--primary-red);
-    padding-left: 5px;
-}
-
-.footer-contact p {
-    color: #aebce0;
-    margin-bottom: 15px;
-    font-size: 15px;
-}
-
-.footer-contact i {
-    color: var(--primary-red);
-    width: 20px;
-}
-
-.footer-bottom {
-    background-color: #082a66;
-    padding: 20px 0;
-    font-size: 13px;
-    color: #aebce0;
-}
-
-.flex-between {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.footer-bottom a {
-    color: #aebce0;
-}
-
-.footer-bottom a:hover {
-    color: var(--white);
-}
-
-/* =========================================
-   SOCIAL MEDIA ICONS
-========================================= */
-/* =========================================
-   TOP BAR (Верхняя полоса)
-========================================= */
-.top-bar {
-    background-color: #1a1a1a;
-    color: #ccc;
-    font-size: 13px;
-    padding: 10px 0;
-    border-bottom: 1px solid #333;
-}
-
-.top-bar-container {
-    display: flex;
-    justify-content: space-between; /* Это раскидывает контент по краям */
-    align-items: center;
-}
-
-/* Группа слева: MC и Контакты */
-.top-bar-left-group {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-.top-bar-left-group span, 
-.top-bar-left-group a {
-    color: #ffffff;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-}
-
-.top-bar-left-group a:hover {
-    color: var(--primary-red); /* При наведении будет становиться красным */
-}
-
-.top-bar-left-group i {
-    color: var(--primary-red);
-    margin-right: 8px;
-}
-
-/* Соцсети в самом правом углу */
-.social-top {
-    display: flex;
-    gap: 15px;
-    padding-left: 20px;
-    border-left: 1px solid #444;
-}
-
-.social-top a {
-    color: var(--primary-red);
-    font-size: 16px;
-    transition: var(--transition);
-}
-
-.social-top a:hover {
-    color: var(--white);
-    transform: translateY(-2px);
-}
-
-/* =========================================
-   NEW FOOTER (Style Priority1)
+   SITE FOOTER (Priority1 Style)
 ========================================= */
 .site-footer {
     background-color: #000000;
@@ -478,12 +220,7 @@ ul { list-style: none; }
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Выравнивание по нижней линии как на референсе */
-}
-
-.footer-left {
-    display: flex;
-    flex-direction: column;
+    align-items: flex-end;
 }
 
 .footer-logo {
@@ -491,30 +228,16 @@ ul { list-style: none; }
     background: white;
     padding: 6px 12px;
     border-radius: 4px;
-    width: fit-content;
     margin-bottom: 25px;
-}
-
-.footer-left p {
-    font-size: 13px;
-    color: #999;
-    margin-bottom: 4px;
+    display: inline-block;
 }
 
 .footer-phone {
     font-size: 18px !important;
     font-weight: 700;
     color: #fff !important;
-    margin-top: 5px;
 }
 
-.footer-right {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-}
-
-/* Квадратные иконки соцсетей */
 .footer-socials {
     display: flex;
     gap: 8px;
@@ -522,138 +245,53 @@ ul { list-style: none; }
 }
 
 .footer-socials a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     width: 36px;
     height: 36px;
     background-color: var(--primary-red);
     color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 4px;
-    font-size: 18px;
 }
 
-.footer-socials a:hover {
-    background-color: #fff;
-    color: var(--primary-red);
-    transform: translateY(-3px);
-}
-
-/* Ссылки в линию через разделитель */
 .footer-bottom-links {
     display: flex;
-    align-items: center;
     gap: 12px;
     font-size: 11px;
     font-weight: 700;
-    letter-spacing: 1px;
-}
-
-.footer-bottom-links a {
-    color: #fff;
-    text-transform: uppercase;
-}
-
-.footer-bottom-links a:hover {
-    color: var(--primary-red);
-}
-
-.divider {
-    color: #444;
 }
 
 /* =========================================
-   АДАПТИВНОСТЬ ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ
+   АДАПТИВНОСТЬ (MEDIA QUERIES)
 ========================================= */
-
 @media (max-width: 768px) {
-    /* 1. Верхняя панель: скрываем почту/МС или ставим в столбик, чтобы не теснились */
     .top-bar-left-group {
         flex-direction: column;
         gap: 5px;
         align-items: flex-start;
         font-size: 11px;
     }
-    
-    .social-top {
-        padding-left: 10px;
-        gap: 10px;
-    }
 
-    /* 2. Шапка: логотип сверху, меню и кнопка снизу */
     .header-container {
         flex-direction: column;
         gap: 15px;
-        text-align: center;
     }
 
     .main-nav {
-        display: flex;
-        flex-wrap: wrap;
         justify-content: center;
-        gap: 10px;
+        flex-wrap: wrap;
     }
 
-    .main-nav a {
-        margin: 0 5px;
-        font-size: 14px;
-    }
+    .hero h1 { font-size: 36px; }
 
-    /* 3. Hero секция: уменьшаем огромный текст */
-    .hero {
-        padding: 80px 20px;
-        text-align: center;
-    }
+    .service-grid { grid-template-columns: 1fr; }
 
-    .hero h1 {
-        font-size: 36px; /* На телефоне 64px — это слишком много */
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .hero-buttons {
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero-buttons .btn {
-        margin-right: 0;
-        width: 100%;
-    }
-
-    /* 4. Сервисы: вместо 3 колонок делаем 1 */
-    .service-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* 5. Блок водителей: картинка над текстом */
-    .driver-grid {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-
-    .driver-image {
-        height: 300px;
-    }
-
-    /* 6. Футер: все элементы в один столбик по центру */
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
-        gap: 30px;
     }
 
-    .footer-right {
-        align-items: center;
-    }
-
-    .footer-bottom-links {
-        flex-wrap: wrap;
-        justify-content: center;
-        gap: 10px;
-    }
+    .footer-right { align-items: center; margin-top: 30px; }
 }

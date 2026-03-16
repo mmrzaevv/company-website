@@ -56,9 +56,11 @@ ul { list-style: none; }
 
 
 .btn-right-wrapper {
-    display: flex;
+    display: block;
+    text-align: right;         /* Это выровняет кнопку по правому краю */
     margin-top: 25px;          /* Отступ от текста/списка сверху */
     margin-bottom: 40px;       /* Спейс снизу до футера */
+    width: 100%;               /* Занимает всю ширину */
 }
 
 /* Добавляем базовые стили для синей кнопки (если их нет) */
@@ -140,9 +142,11 @@ ul { list-style: none; }
     font-size: 16px;
 }
 
+/* Верхние соцсети: свечение при наведении */
 .social-top a:hover {
     color: var(--white);
     transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
 }
 
 /* =========================================
@@ -270,6 +274,7 @@ ul { list-style: none; }
     justify-content: center;
     align-items: center;
     border-radius: 4px;
+   transition: var(--transition);
 }
 
 .footer-bottom-links {
@@ -277,6 +282,13 @@ ul { list-style: none; }
     gap: 12px;
     font-size: 11px;
     font-weight: 700;
+}
+
+.footer-socials a:hover {
+    background-color: var(--white);
+    color: var(--primary-red);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(215, 38, 46, 0.5); /* Красное свечение */
 }
 
 /* =========================================

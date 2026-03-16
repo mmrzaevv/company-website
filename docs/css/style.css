@@ -266,32 +266,84 @@ ul { list-style: none; }
    АДАПТИВНОСТЬ (MEDIA QUERIES)
 ========================================= */
 @media (max-width: 768px) {
-    .top-bar-left-group {
-        flex-direction: column;
-        gap: 5px;
-        align-items: flex-start;
-        font-size: 11px;
+    /* Скрываем чекбокс */
+    .menu-checkbox {
+        display: none;
+    }
+
+    /* Иконка "бургер" - показываем только на мобильных */
+    .menu-btn {
+        display: block;
+        font-size: 24px;
+        color: var(--primary-blue);
+        cursor: pointer;
+        order: 2;
     }
 
     .header-container {
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .main-nav {
-        justify-content: center;
+        flex-direction: row; /* Лого и бургер в одну линию */
+        justify-content: space-between;
+        padding: 10px 20px;
         flex-wrap: wrap;
     }
 
-    .hero h1 { font-size: 36px; }
-
-    .service-grid { grid-template-columns: 1fr; }
-
-    .footer-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
+    .logo {
+        order: 1;
     }
 
-    .footer-right { align-items: center; margin-top: 30px; }
+    .logo img {
+        height: 40px; /* Уменьшаем лого на мобильном */
+    }
+
+    /* Прячем основную кнопку Apply Now в мобильной версии или делаем ее маленькой */
+    .header-btn {
+        display: none; /* Лучше скрыть, чтобы не загромождать, или оставить в меню */
+    }
+
+    /* Навигация: превращаем в выпадающий список */
+    .main-nav {
+        display: none; /* По умолчанию скрыто */
+        width: 100%;
+        flex-direction: column;
+        background: #fff;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        padding: 20px 0;
+        z-index: 999;
+        order: 3;
+    }
+
+    .main-nav a {
+        margin: 10px 25px;
+        font-size: 16px;
+        display: block;
+    }
+
+    /* МАГИЯ: Когда чекбокс нажат, показываем меню */
+    .menu-checkbox:checked ~ .main-nav {
+        display: flex;
+    }
+
+    /* Уменьшаем Hero секцию, чтобы она не была огромной */
+    .hero {
+        padding: 60px 20px;
+    }
+    .hero h1 {
+        font-size: 28px;
+    }
+    
+    /* Компактный Top Bar */
+    .top-bar-left-group {
+        font-size: 10px;
+        gap: 10px;
+    }
+}
+
+/* Скрываем иконку бургера на компьютере */
+@media (min-width: 769px) {
+    .menu-btn, .menu-checkbox {
+        display: none;
+    }
 }

@@ -1,215 +1,404 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
+/* =========================================
+   БАЗОВЫЕ НАСТРОЙКИ И ПЕРЕМЕННЫЕ
+========================================= */
+:root {
+    --primary-blue: #0b3d91; /* Темно-синий из лого */
+    --primary-red: #d7262e;  /* Красный из лого */
+    --dark-blue: #082a66;    /* Еще более темный для ховера */
+    --dark-red: #b51e24;     /* Темно-красный для ховера */
+    --text-dark: #333333;
+    --text-gray: #666666;
+    --bg-light: #f5f7fb;
+    --white: #ffffff;
+    --transition: all 0.3s ease;
 }
 
-body{
-font-family:'Montserrat', sans-serif;
-background:#f5f7fb;
-color:#333;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.container{
-max-width:1200px;
-margin:auto;
-padding:0 20px;
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    line-height: 1.6;
 }
 
-
-
-/* HEADER */
-
-.header{
-background:#0b3d91;
-color:white;
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px;
 }
 
-.header-container{
-display:flex;
-align-items:center;
-justify-content:space-between;
-padding:18px 0;
+.text-center { text-align: center; }
+.section-padding { padding: 90px 0; }
+
+a { text-decoration: none; transition: var(--transition); }
+ul { list-style: none; }
+
+/* =========================================
+   КНОПКИ (BUTTONS)
+========================================= */
+.btn {
+    display: inline-block;
+    padding: 14px 32px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    border: 2px solid transparent;
 }
 
-.logo img{
-height:60px;
+.btn-red {
+    background-color: var(--primary-red);
+    color: var(--white);
 }
 
-nav a{
-margin:0 15px;
-color:white;
-text-decoration:none;
-font-weight:600;
+.btn-red:hover {
+    background-color: var(--dark-red);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(215, 38, 46, 0.3);
 }
 
-
-
-/* HERO */
-
-.hero{
-
-background:
-linear-gradient(rgba(11,61,145,0.85),rgba(11,61,145,0.85)),
-url("../images/truck.jpg");
-
-background-size:cover;
-background-position:center;
-
-padding:140px 20px;
-text-align:center;
-color:white;
-
+.btn-blue {
+    background-color: var(--primary-blue);
+    color: var(--white);
 }
 
-.hero h1{
-font-size:56px;
-margin-bottom:15px;
+.btn-blue:hover {
+    background-color: var(--dark-blue);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(11, 61, 145, 0.3);
 }
 
-.hero p{
-font-size:18px;
-margin-bottom:30px;
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border-color: var(--white);
 }
 
-
-
-/* BUTTONS */
-
-.btn-yellow{
-background:#ffcc00;
-padding:14px 30px;
-color:black;
-font-weight:700;
-text-decoration:none;
-border-radius:4px;
-margin-right:10px;
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary-blue);
 }
 
-.btn-white{
-background:white;
-padding:14px 30px;
-text-decoration:none;
-font-weight:600;
-border-radius:4px;
+/* =========================================
+   TOP BAR (Верхняя полоса)
+========================================= */
+.top-bar {
+    background-color: #222;
+    color: #ccc;
+    font-size: 13px;
+    padding: 8px 0;
 }
 
-.btn-red{
-background:#d7262e;
-color:white;
-padding:12px 24px;
-border-radius:4px;
-text-decoration:none;
-font-weight:600;
+.top-bar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-
-
-/* SERVICES */
-
-.services{
-padding:90px 0;
+.top-bar-right a {
+    color: #ccc;
+    margin-left: 20px;
 }
 
-.services h2{
-text-align:center;
-margin-bottom:50px;
-color:#0b3d91;
+.top-bar-right a:hover {
+    color: var(--primary-red);
 }
 
-.service-grid{
-display:grid;
-grid-template-columns:repeat(3,1fr);
-gap:30px;
+.top-bar i {
+    margin-right: 5px;
+    color: var(--primary-red);
 }
 
-.service-card{
-background:white;
-border-radius:10px;
-box-shadow:0 10px 25px rgba(0,0,0,0.1);
-overflow:hidden;
-text-align:center;
-padding-bottom:25px;
+/* =========================================
+   HEADER & NAVIGATION
+========================================= */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
-.service-card img{
-width:100%;
-height:200px;
-object-fit:cover;
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 20px;
 }
 
-.service-card h3{
-margin:20px 0 10px;
+.logo img {
+    height: 65px;
+    display: block;
 }
 
-.service-card p{
-padding:0 20px;
-font-size:14px;
-margin-bottom:15px;
+.main-nav a {
+    margin: 0 18px;
+    color: var(--primary-blue);
+    font-weight: 600;
+    font-size: 15px;
+    position: relative;
 }
 
-.card-btn{
-background:black;
-color:white;
-padding:10px 25px;
-text-decoration:none;
-border-radius:3px;
+.main-nav a:hover, .main-nav a.active {
+    color: var(--primary-red);
 }
 
-
-
-/* QUOTE */
-
-.quote{
-background:black;
-color:white;
-text-align:center;
-padding:90px 20px;
+/* =========================================
+   HERO SECTION
+========================================= */
+.hero {
+    /* Добавь свое фото грузовика в папку images и назови truck-bg.jpg */
+    background: linear-gradient(rgba(11,61,145,0.85), rgba(8,42,102,0.9)), url("../images/truck.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 160px 20px;
+    text-align: left; /* Сделали по левому краю как у серьезных брендов */
+    color: var(--white);
 }
 
-.quote h2{
-color:#ffcc00;
-margin-bottom:15px;
+.hero h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
 }
 
-
-
-/* DRIVER SECTION */
-
-.drivers{
-padding:90px 0;
+.hero h1 span {
+    color: var(--primary-red);
 }
 
-.driver-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:40px;
-align-items:center;
+.hero p {
+    font-size: 20px;
+    max-width: 600px;
+    margin-bottom: 40px;
+    opacity: 0.9;
 }
 
-.driver-grid img{
-width:100%;
-border-radius:10px;
+.hero-buttons .btn {
+    margin-right: 15px;
 }
 
-
-
-/* FOOTER */
-
-footer{
-background:#0b3d91;
-color:white;
-text-align:center;
-padding:40px;
-margin-top:60px;
+/* =========================================
+   SECTION HEADINGS
+========================================= */
+.subtitle {
+    color: var(--primary-red);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 14px;
+    display: block;
+    margin-bottom: 10px;
 }
 
-.footer-links{
-margin-top:10px;
+.section-heading h2 {
+    font-size: 36px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
 }
 
-.footer-links a{
-margin:0 10px;
-color:white;
-text-decoration:none;
+.heading-line {
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-red);
+    margin: 0 auto 40px auto;
+}
+
+/* =========================================
+   SERVICES GRID (Как в Priority1)
+========================================= */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.service-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 40px 30px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.06);
+    transition: var(--transition);
+    border-bottom: 4px solid transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    border-bottom: 4px solid var(--primary-red);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+}
+
+.card-icon {
+    font-size: 45px;
+    color: var(--primary-blue);
+    margin-bottom: 25px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text-gray);
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.card-link {
+    color: var(--primary-red);
+    font-weight: 600;
+}
+
+.card-link i {
+    margin-left: 5px;
+    transition: var(--transition);
+}
+
+.service-card:hover .card-link i {
+    transform: translateX(5px);
+}
+
+/* =========================================
+   DRIVERS SECTION
+========================================= */
+.drivers {
+    background-color: var(--white);
+}
+
+.driver-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.driver-image {
+    background: url('../images/truck.jpg') center/cover;
+    height: 500px;
+    border-radius: 10px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.driver-info h2 {
+    font-size: 36px;
+    color: var(--primary-blue);
+    margin-bottom: 20px;
+}
+
+.driver-info p {
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    font-size: 16px;
+}
+
+.driver-benefits {
+    margin-bottom: 30px;
+}
+
+.driver-benefits li {
+    margin-bottom: 12px;
+    font-weight: 600;
+    color: var(--primary-blue);
+}
+
+.driver-benefits i {
+    color: var(--primary-red);
+    margin-right: 10px;
+}
+
+/* =========================================
+   FOOTER
+========================================= */
+.footer {
+    background-color: var(--primary-blue);
+    color: var(--white);
+    padding-top: 70px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 50px;
+    margin-bottom: 50px;
+}
+
+.footer-logo {
+    height: 60px;
+    margin-bottom: 20px;
+    background: white; /* Чтобы темное лого было видно на синем фоне */
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.footer-about p {
+    color: #aebce0;
+    font-size: 14px;
+}
+
+.footer h3 {
+    font-size: 18px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.footer h3::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 30px;
+    height: 2px;
+    background-color: var(--primary-red);
+}
+
+.footer-links-col a {
+    display: block;
+    color: #aebce0;
+    margin-bottom: 12px;
+    font-size: 15px;
+}
+
+.footer-links-col a:hover {
+    color: var(--primary-red);
+    padding-left: 5px;
+}
+
+.footer-contact p {
+    color: #aebce0;
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.footer-contact i {
+    color: var(--primary-red);
+    width: 20px;
+}
+
+.footer-bottom {
+    background-color: #082a66;
+    padding: 20px 0;
+    font-size: 13px;
+    color: #aebce0;
+}
+
+.flex-between {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer-bottom a {
+    color: #aebce0;
+}
+
+.footer-bottom a:hover {
+    color: var(--white);
 }

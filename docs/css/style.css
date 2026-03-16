@@ -62,7 +62,6 @@ ul { list-style: none; }
 
 .btn-right-wrapper {
     display: flex;
-    justify-content: flex-end; /* Перемещает кнопку вправо */
     margin-top: 25px;          /* Отступ от текста/списка сверху */
     margin-bottom: 40px;       /* Спейс снизу до футера */
 }

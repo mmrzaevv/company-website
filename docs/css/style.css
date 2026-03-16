@@ -302,17 +302,19 @@ ul { list-style: none; }
 
     /* Навигация: превращаем в выпадающий список */
     .main-nav {
-        display: none; /* По умолчанию скрыто */
+        display: none; 
         width: 100%;
         flex-direction: column;
         background: #fff;
         position: absolute;
-        top: 100%;
+        top: 100%; /* Меню откроется ровно под шапкой */
         left: 0;
         box-shadow: 0 10px 15px rgba(0,0,0,0.1);
         padding: 20px 0;
         z-index: 999;
         order: 3;
+        /* Добавь это для красоты */
+        border-top: 2px solid var(--primary-red); 
     }
 
     .main-nav a {

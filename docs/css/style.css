@@ -406,57 +406,52 @@ ul { list-style: none; }
 /* =========================================
    SOCIAL MEDIA ICONS
 ========================================= */
-
 /* =========================================
    TOP BAR (Верхняя полоса)
 ========================================= */
 .top-bar {
-    background-color: #222;
+    background-color: #1a1a1a;
     color: #ccc;
     font-size: 13px;
-    padding: 8px 0;
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
 }
 
 .top-bar-container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Это раскидывает контент по краям */
     align-items: center;
 }
 
-.top-bar-right {
+/* Группа слева: MC и Контакты */
+.top-bar-left-group {
     display: flex;
     align-items: center;
+    gap: 25px;
 }
 
-.top-contact-info {
-    display: flex;
-    gap: 20px;
-}
-
-.top-contact-info a {
+.top-bar-left-group span, 
+.top-bar-left-group a {
     color: #ccc;
+    display: flex;
+    align-items: center;
 }
 
-.top-contact-info a:hover {
+.top-bar-left-group i {
     color: var(--primary-red);
+    margin-right: 8px;
 }
 
-.top-bar i {
-    margin-right: 5px;
-    color: var(--primary-red);
-}
-
-/* Соцсети в верхней панели сдвинуты вправо */
+/* Соцсети в самом правом углу */
 .social-top {
     display: flex;
     gap: 15px;
-    margin-left: 30px; /* Отступ, чтобы оттолкнуть их вправо */
-    border-left: 1px solid #444; /* Линия-разделитель */
     padding-left: 20px;
+    border-left: 1px solid #444;
 }
 
 .social-top a {
-    color: var(--primary-red); /* Сразу красные, как на твоем скрине */
+    color: var(--primary-red);
     font-size: 16px;
     transition: var(--transition);
 }
@@ -467,30 +462,29 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   NEW FOOTER (Priority1 Style)
+   NEW FOOTER (Style Priority1)
 ========================================= */
 .site-footer {
-    background-color: #000000; /* Строгий черный фон */
-    padding: 50px 0;
+    background-color: #000000;
+    padding: 60px 0 40px;
     color: #ffffff;
 }
 
 .footer-content {
     display: flex;
     justify-content: space-between;
-    align-items: flex-end; /* Прижимаем контент к низу */
+    align-items: flex-end; /* Выравнивание по нижней линии как на референсе */
 }
 
-/* Левая часть футера */
 .footer-left {
     display: flex;
     flex-direction: column;
 }
 
 .footer-logo {
-    height: 55px;
-    background: white; /* Белый фон под логотип */
-    padding: 5px 10px;
+    height: 50px;
+    background: white;
+    padding: 6px 12px;
     border-radius: 4px;
     width: fit-content;
     margin-bottom: 25px;
@@ -498,60 +492,60 @@ ul { list-style: none; }
 
 .footer-left p {
     font-size: 13px;
-    margin-bottom: 5px;
-    color: #cccccc;
+    color: #999;
+    margin-bottom: 4px;
 }
 
 .footer-phone {
-    font-size: 16px !important;
+    font-size: 18px !important;
     font-weight: 700;
-    color: var(--white) !important;
+    color: #fff !important;
+    margin-top: 5px;
 }
 
-/* Правая часть футера */
 .footer-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end; /* Выравнивание по правому краю */
+    align-items: flex-end;
 }
 
-/* Квадратные соцсети */
+/* Квадратные иконки соцсетей */
 .footer-socials {
     display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 8px;
+    margin-bottom: 25px;
 }
 
 .footer-socials a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 35px;
-    height: 35px;
-    background-color: var(--primary-red); /* Твой фирменный красный */
-    color: #ffffff;
-    border-radius: 4px; /* Квадратные с легким скруглением */
+    width: 36px;
+    height: 36px;
+    background-color: var(--primary-red);
+    color: #fff;
+    border-radius: 4px;
     font-size: 18px;
-    transition: var(--transition);
 }
 
 .footer-socials a:hover {
-    background-color: var(--primary-blue);
+    background-color: #fff;
+    color: var(--primary-red);
     transform: translateY(-3px);
 }
 
-/* Ссылки снизу */
+/* Ссылки в линию через разделитель */
 .footer-bottom-links {
     display: flex;
     align-items: center;
-    gap: 15px;
-    font-size: 12px;
+    gap: 12px;
+    font-size: 11px;
     font-weight: 700;
     letter-spacing: 1px;
 }
 
 .footer-bottom-links a {
-    color: #ffffff;
+    color: #fff;
     text-transform: uppercase;
 }
 
@@ -560,5 +554,5 @@ ul { list-style: none; }
 }
 
 .divider {
-    color: #555555; /* Цвет палочки-разделителя */
+    color: #444;
 }

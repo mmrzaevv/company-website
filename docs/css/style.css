@@ -432,9 +432,14 @@ ul { list-style: none; }
 
 .top-bar-left-group span, 
 .top-bar-left-group a {
-    color: #ccc;
+    color: #ffffff;
     display: flex;
     align-items: center;
+    text-decoration: none;
+}
+
+.top-bar-left-group a:hover {
+    color: var(--primary-red); /* При наведении будет становиться красным */
 }
 
 .top-bar-left-group i {

@@ -321,7 +321,7 @@ ul { list-style: none; }
 
     .main-nav a {
         margin: 0 4px;
-       font-size: 13px;/* Делаем ссылки чуть плотнее друг к другу */
+       font-size: 10px;/* Делаем ссылки чуть плотнее друг к другу */
     }
 
     .hero h1 { font-size: 36px; }

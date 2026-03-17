@@ -316,11 +316,12 @@ ul { list-style: none; }
     .main-nav {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 10px; /* Добавляем аккуратный отступ между ссылками */
+        gap: 5px; /* Добавляем аккуратный отступ между ссылками */
     }
 
     .main-nav a {
-        margin: 0 8px; /* Делаем ссылки чуть плотнее друг к другу */
+        margin: 0 4px;
+       font-size: 13px;/* Делаем ссылки чуть плотнее друг к другу */
     }
 
     .hero h1 { font-size: 36px; }

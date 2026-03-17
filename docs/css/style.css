@@ -181,28 +181,89 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   HERO SECTION
+   ОБНОВЛЕННЫЙ HERO С АНИМИРОВАННЫМИ СТРЕЛКАМИ
 ========================================= */
-.hero {
-    background: linear-gradient(rgba(11,61,145,0.85), rgba(8,42,102,0.9)), url("../images/truck.jpg");
+.hero-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 550px;
+    text-align: left;
+}
+
+/* Контейнер для графики */
+.hero-graphics {
+    flex: 1;
+    display: flex;
+    gap: 15px; /* Расстояние между двумя стрелками */
+    justify-content: flex-end;
+    height: 450px; /* Высота фотографий */
+}
+
+/* Сама форма стрелки (Шеврон, смотрящий ВЛЕВО) */
+.chevron {
+    width: 220px;
+    height: 100%;
+    background-color: var(--primary-blue);
     background-size: cover;
     background-position: center;
-    padding: 160px 20px;
-    color: var(--white);
+    /* Магия, которая вырезает форму стрелки */
+    clip-path: polygon(100% 0, 75% 50%, 100% 100%, 25% 100%, 0 50%, 25% 0);
+    opacity: 0; /* Прячем до начала анимации */
 }
 
-.hero h1 {
-    font-size: 64px;
-    line-height: 1.1;
-    margin-bottom: 20px;
-    font-weight: 800;
+/* Картинки внутри стрелок и запуск анимации */
+.chevron-1 {
+    /* ЗАМЕНИТЕ на нужную фотографию трака */
+    background-image: url('../images/truck.jpg'); 
+    animation: slideInFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.2s; /* Первая стрелка выезжает чуть раньше */
 }
 
-.hero p {
-    font-size: 20px;
-    max-width: 600px;
-    margin-bottom: 40px;
-    opacity: 0.9;
+.chevron-2 {
+    /* ЗАМЕНИТЕ на другую фотографию трака, если есть */
+    background-image: url('../images/truck.jpg'); 
+    animation: slideInFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    animation-delay: 0.4s; /* Вторая стрелка выезжает следом */
+}
+
+/* Анимация: плавный выезд справа с остановкой */
+@keyframes slideInFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(150px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ */
+@media (max-width: 992px) {
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero-text {
+        text-align: center; /* Центрируем текст на мобилках */
+    }
+
+    .hero-graphics {
+        height: 250px; /* Уменьшаем высоту на телефонах */
+        justify-content: center;
+        margin-top: 30px;
+    }
+
+    .chevron {
+        width: 140px; /* Уменьшаем ширину на телефонах */
+    }
 }
 
 /* =========================================

@@ -66,7 +66,8 @@
             font-size: 14px;
         }
 
-        .form-container input {
+        .form-container input,
+        .form-container textarea {
             width: 100%;
             padding: 14px 15px;
             border: 1px solid #ccc;
@@ -78,11 +79,16 @@
         }
 
         /* Эффект при клике на поле ввода */
-        .form-container input:focus {
+        .form-container input:focus,
+        .form-container textarea:focus {
             border-color: var(--primary-blue);
             outline: none;
             background-color: var(--white);
             box-shadow: 0 0 8px rgba(11, 61, 145, 0.15);
+        }
+        
+        .form-container textarea {
+            resize: vertical; /* Позволяет тянуть поле только вниз */
         }
 
         .form-container button {
@@ -105,7 +111,8 @@
             .form-group.full-width {
                 grid-column: span 1;
             }
-            .form-container input {
+            .form-container input,
+            .form-container textarea {
                 margin-bottom: 20px;
             }
             .form-container {
@@ -194,19 +201,19 @@
 
                     <div class="form-row">
                         <div class="form-group">
-                            <label>Number of Drivers *</label>
-                            <input type="number" name="Number of Drivers" placeholder="e.g. 5" min="1" required>
-                        </div>
-                        <div class="form-group">
                             <label>Number of Vehicles *</label>
                             <input type="number" name="Number of Vehicles" placeholder="e.g. 5" min="1" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Average Rate Per Mile ($) *</label>
+                            <input type="text" name="Rate Per Mile" placeholder="e.g. $1.60" required>
                         </div>
                     </div>
 
                     <div class="form-row">
                         <div class="form-group full-width">
-                            <label>Average Rate Per Mile ($) *</label>
-                            <input type="text" name="Rate Per Mile" placeholder="e.g. $1.60" required>
+                            <label>Comments / Additional Information</label>
+                            <textarea name="Comments" rows="4" placeholder="Equipment type, special requirements, or any questions you might have..."></textarea>
                         </div>
                     </div>
 

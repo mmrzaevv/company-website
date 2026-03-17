@@ -295,6 +295,11 @@ ul { list-style: none; }
    АДАПТИВНОСТЬ (MEDIA QUERIES)
 ========================================= */
 @media (max-width: 768px) {
+    /* Открепляем шапку на телефонах, чтобы она не занимала пол-экрана при скролле */
+    .header {
+        position: relative; 
+    }
+
     .top-bar-left-group {
         flex-direction: column;
         gap: 5px;
@@ -305,11 +310,17 @@ ul { list-style: none; }
     .header-container {
         flex-direction: column;
         gap: 15px;
+        padding: 15px 10px; /* Чуть уменьшаем отступы по бокам для телефона */
     }
 
     .main-nav {
         justify-content: center;
         flex-wrap: wrap;
+        gap: 10px; /* Добавляем аккуратный отступ между ссылками */
+    }
+
+    .main-nav a {
+        margin: 0 8px; /* Делаем ссылки чуть плотнее друг к другу */
     }
 
     .hero h1 { font-size: 36px; }

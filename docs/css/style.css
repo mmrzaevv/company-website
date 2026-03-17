@@ -57,7 +57,7 @@ ul { list-style: none; }
 
 .btn-right-wrapper {
     display: block;
-    text-align: right;         /* Это выровняет кнопку по правому краю */
+    text-align: left;         /* Это выровняет кнопку по правому краю */
     margin-top: 25px;          /* Отступ от текста/списка сверху */
     margin-bottom: 40px;       /* Спейс снизу до футера */
     width: 100%;               /* Занимает всю ширину */

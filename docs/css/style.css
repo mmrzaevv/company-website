@@ -316,11 +316,11 @@ ul { list-style: none; }
     .main-nav {
         justify-content: center;
         flex-wrap: wrap;
-        gap: 5px; /* Добавляем аккуратный отступ между ссылками */
+        gap: 4px; /* Добавляем аккуратный отступ между ссылками */
     }
 
     .main-nav a {
-        margin: 0 4px;
+        margin: 0 3px;
        font-size: 10px;/* Делаем ссылки чуть плотнее друг к другу */
     }
 

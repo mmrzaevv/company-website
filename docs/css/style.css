@@ -181,8 +181,15 @@ ul { list-style: none; }
 }
 
 /* =========================================
-   ОБНОВЛЕННЫЙ HERO С АНИМИРОВАННЫМИ СТРЕЛКАМИ
+   HERO SECTION (С АНИМИРОВАННЫМИ СТРЕЛКАМИ)
 ========================================= */
+.hero {
+    background-color: #0b192c; /* Солидный темно-синий фон */
+    padding: 120px 20px;
+    color: var(--white);
+    overflow: hidden; /* Чтобы анимация выезда не ломала страницу */
+}
+
 .hero-wrapper {
     display: flex;
     align-items: center;
@@ -192,47 +199,68 @@ ul { list-style: none; }
 
 .hero-text {
     flex: 1;
-    max-width: 550px;
+    max-width: 600px;
     text-align: left;
 }
 
-/* Контейнер для графики */
+.hero-text h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    font-weight: 800;
+    color: var(--white);
+}
+
+.hero-text span {
+    color: var(--primary-red); /* Красный акцент */
+}
+
+.hero-text p {
+    font-size: 20px;
+    margin-bottom: 40px;
+    opacity: 0.9;
+    color: var(--white);
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+/* Контейнер для графики (Стрелки) */
 .hero-graphics {
     flex: 1;
     display: flex;
-    gap: 15px; /* Расстояние между двумя стрелками */
+    gap: 15px;
     justify-content: flex-end;
-    height: 450px; /* Высота фотографий */
+    height: 450px;
 }
 
-/* Сама форма стрелки (Шеврон, смотрящий ВЛЕВО) */
+/* Сама форма стрелки */
 .chevron {
     width: 220px;
     height: 100%;
     background-color: var(--primary-blue);
     background-size: cover;
     background-position: center;
-    /* Магия, которая вырезает форму стрелки */
     clip-path: polygon(100% 0, 75% 50%, 100% 100%, 25% 100%, 0 50%, 25% 0);
-    opacity: 0; /* Прячем до начала анимации */
+    opacity: 0;
 }
 
-/* Картинки внутри стрелок и запуск анимации */
+/* Картинки внутри стрелок */
 .chevron-1 {
-    /* ЗАМЕНИТЕ на нужную фотографию трака */
     background-image: url('../images/truck.jpg'); 
     animation: slideInFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    animation-delay: 0.2s; /* Первая стрелка выезжает чуть раньше */
+    animation-delay: 0.2s;
 }
 
 .chevron-2 {
-    /* ЗАМЕНИТЕ на другую фотографию трака, если есть */
     background-image: url('../images/truck.jpg'); 
     animation: slideInFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
-    animation-delay: 0.4s; /* Вторая стрелка выезжает следом */
+    animation-delay: 0.4s;
 }
 
-/* Анимация: плавный выезд справа с остановкой */
+/* Анимация: выезд справа */
 @keyframes slideInFromRight {
     0% {
         opacity: 0;
@@ -243,29 +271,6 @@ ul { list-style: none; }
         transform: translateX(0);
     }
 }
-
-/* АДАПТИВНОСТЬ ДЛЯ ТЕЛЕФОНОВ */
-@media (max-width: 992px) {
-    .hero-wrapper {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .hero-text {
-        text-align: center; /* Центрируем текст на мобилках */
-    }
-
-    .hero-graphics {
-        height: 250px; /* Уменьшаем высоту на телефонах */
-        justify-content: center;
-        margin-top: 30px;
-    }
-
-    .chevron {
-        width: 140px; /* Уменьшаем ширину на телефонах */
-    }
-}
-
 /* =========================================
    SERVICES GRID
 ========================================= */
@@ -396,4 +401,26 @@ ul { list-style: none; }
     }
 
     .footer-right { align-items: center; margin-top: 30px; }
+   .hero {
+        padding: 80px 20px;
+    }
+    .hero-wrapper {
+        flex-direction: column;
+        text-align: center;
+    }
+    .hero-text {
+        text-align: center;
+        margin: 0 auto;
+    }
+    .hero-buttons {
+        justify-content: center;
+    }
+    .hero-graphics {
+        height: 250px;
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .chevron {
+        width: 140px;
+    }
 }

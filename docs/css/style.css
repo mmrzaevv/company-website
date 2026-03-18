@@ -251,15 +251,16 @@ ul { list-style: none; }
     opacity: 0;
 }
 
-/* Картинки внутри стрелок */
+/* Первая стрелка показывает ЛЕВУЮ половину картинки */
 .chevron-1 {
-    background-image: url('../images/truck.jpg'); 
+    background-position: left center; 
     animation: slideInFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     animation-delay: 0.2s;
 }
 
+/* Вторая стрелка показывает ПРАВУЮ половину картинки */
 .chevron-2 {
-    background-image: url('../images/truck.jpg'); 
+    background-position: right center; 
     animation: slideInFromRight 1s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     animation-delay: 0.4s;
 }

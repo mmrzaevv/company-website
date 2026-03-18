@@ -241,8 +241,12 @@ ul { list-style: none; }
     width: 220px;
     height: 100%;
     background-color: var(--primary-blue);
-    background-size: cover;
-    background-position: center;
+    background-image: url('../images/truck.jpg'); /* ОДНА картинка для обеих стрелок */
+    
+    /* СЕКРЕТ ЗДЕСЬ: Ширина 220px + отступ 15px + Ширина 220px = 455px */
+    background-size: 455px 100%; 
+    background-repeat: no-repeat;
+    
     clip-path: polygon(100% 0, 75% 50%, 100% 100%, 25% 100%, 0 50%, 25% 0);
     opacity: 0;
 }
@@ -419,8 +423,10 @@ ul { list-style: none; }
         height: 250px;
         justify-content: center;
         margin-top: 40px;
+        gap: 15px;
     }
     .chevron {
         width: 140px;
+        background-size: 295px 100%;
     }
 }

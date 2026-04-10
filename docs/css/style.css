@@ -362,6 +362,22 @@ ul { list-style: none; }
     box-shadow: 0 5px 15px rgba(215, 38, 46, 0.5); /* Красное свечение */
 }
 
+.checkbox-label {
+    display: flex;
+    align-items: flex-start; /* или center если хочешь ровно по центру */
+    gap: 10px;
+    margin-top: 15px;
+    font-size: 14px;
+    color: #444;
+    line-height: 1.5;
+    font-weight: normal; /* важно! чтобы текст не был жирный как label */
+}
+
+.checkbox-label input {
+    margin-top: 4px;
+    flex-shrink: 0;
+}
+
 /* =========================================
    АДАПТИВНОСТЬ (MEDIA QUERIES)
 ========================================= */

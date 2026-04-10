@@ -72,18 +72,17 @@
             font-size: 14px;
         }
 
-        .form-container input,
-        .form-container textarea {
-            width: 100%;
-            padding: 14px 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 15px;
-            background-color: #fafafa;
-            transition: var(--transition);
-        }
-
+        .form-container input:not([type="checkbox"]),
+.form-container textarea {
+    width: 100%;
+    padding: 14px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    background-color: #fafafa;
+    transition: var(--transition);
+}
         /* Эффект при клике на поле ввода */
         .form-container input:focus,
         .form-container textarea:focus {
@@ -226,10 +225,15 @@
                         </div>
                     </div>
 
-                            <label style="display:block; margin-top:15px; font-size:14px; color:#444;">
-  <input type="checkbox" name="sms_consent" required style="margin-right:8px;" />
-   <strong>By checking this box, I consent to receive SMS messages from GLOBEPRO TRANSPORT LLC related to conversations(external) at the phone number provided above.</strong>  The SMS frequency may vary. Data rates may apply. For assistance, reply HELP. Reply STOP to opt out of receiving text messages. Please review our Privacy Policy and Terms & Conditions.
-                    <button type="submit" class="btn-blue">Submit Application</button>
+                            <label class="checkbox-label">
+  <input type="checkbox" name="sms_consent" required>
+  <span>
+    <strong>By checking this box, I consent to receive SMS messages from GLOBEPRO TRANSPORT LLC related to conversations (external) at the phone number provided above.</strong>
+    The SMS frequency may vary. Data rates may apply. For assistance, reply HELP. Reply STOP to opt out of receiving text messages. Please review our Privacy Policy and Terms & Conditions.
+  </span>
+</label>
+
+<button type="submit" class="btn-blue">Submit Application</button>
 
 
                 </form>

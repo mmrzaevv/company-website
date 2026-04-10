@@ -363,18 +363,21 @@ ul { list-style: none; }
 }
 
 .checkbox-label {
-    display: flex;
-    align-items: flex-start; /* или center если хочешь ровно по центру */
+      display: flex;
+    align-items: flex-start;
     gap: 10px;
     margin-top: 15px;
     font-size: 14px;
     color: #444;
     line-height: 1.5;
-    font-weight: normal; /* важно! чтобы текст не был жирный как label */
+    font-weight: 400;
+    cursor: pointer;
 }
 
-.checkbox-label input {
-    margin-top: 4px;
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    padding: 0;
+    margin: 3px 0 0 0;
     flex-shrink: 0;
 }
 
